@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>10spr JavaScript Development</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body onload="checkCookie()">
+
+  <div class="sidenav" id="sidenav">
+    <h3 style="color: white; text-align: center; text-decoration: none;">Navigation</h3>
+    <a href="##1">Section 1</a>
+    <a href="##2">2. The forEach() method</a>
+    <a href="##3">3. The sort() method</a>
+    <a href="##4">4. The reverse() method</a>
+    <a href="##5">5. Displaying an Array of Objects</a>
+    <a href="##6">6. Addition from an Array of Objects</a>
+    <a href="##7">7. The toString() method</a>
+    <a href="##8">8. The join() method</a>
+    <a href="##9">9. The pop() method</a>
+    <a href="##10">10. The push() method</a>
+    <a href="##1">11. The shift() method</a>
+    <a href="##2">12. The length method 1.0</a>
+    <a href="##3">13. The length method 2.0</a>
+    <a href="##4">14. Deleting array elemtns</a>
+    <a href="##5">15. The splice() method</a>
+    <a href="##6">16. The concat() method 1.0</a>
+    <a href="##7">17. The concat() method 2.0</a>
+    <a href="##8">18. The compare function</a>
+    <a href="##9">19. Sorting Array Elements in Random Order</a>
+    <a href="##10">20. The Fisher Yates Method</a>
+  </div>
+
+  <div class="main" id="main">
+
+
+  <div class="top">
+    <h1 class="title">10spr's JavaScript Development</h1>
+    <p class="title-description">
+      Hi! This is 10spr. I will learn JavaScript and build cool things to solve daily life problems. This will be a file to keep track of my learning.
+    </p>
+    <div class="line-break"></div>
+  </div>
+
+
+  <div id="#1">
+    <h4>#1. What is your favorite car brand?</h4>
+    <p id="favcar#1">My fav car is...</p>
+    <button type="button" onclick="displaycar1()">Show</button>
+    <button type="button" class="button2" onclick="displaycar1a()">Hide</button>
+    <button type="button" class="button3" onclick="displayinfo1()">Info</button>
+    <p id="info1"></p>
+    <div class="line-break"></div>
+  </div>
+
+
+
+  <div id="#2">
+    <h4>#2. What are some of your dream cars</h4>
+    <p id="dreamcars#2">Here is the list of my dream cars...</p>
+    <p id="dreamcars#2a"></p>
+    <button type="button" onclick="displaycar2a()">Show</button>
+    <button type="button" class="button2" onclick="hidecar2()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+
+
+  <div id="#3">
+    <h4>#3. Sort dream cars in ascending order.</h4>
+    <p id="dreamcars#3a">Here is the sorted list:&nbsp;</p>
+    <button type="button" onclick="sort3()">Sort</button>
+    <button type="button" class="button2" onclick="hidesort3()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#4">
+    <h4>#4. Sort dream cars in descending order.</h4>
+    <p id="dreamcars#4a">Here is the sorted list:&nbsp;</p>
+    <button type="button" onclick="sort4()">Sort</button>
+    <button type="button" class="button2" onclick="hidesort4()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#5">
+    <h4>#5. Car Details</h4>
+    <p id="cardetails#5">Here are the details (year, model, price) of each car:&nbsp;</p>
+    <button type="button" onclick="cars.forEach(displaydetail)">Show</button>
+    <button type="button" class="button2" onclick="hidedetail()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#6">
+    <h4>#6. What is the total price of all 4 cars above?</h4>
+    <p id="totalprice#6">The total price is:&nbsp;</p>
+    <button type="button" onclick="showprice()">Show</button>
+    <button type="button" class="button2" onclick="hideprice()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#7">
+    <h4>#7. Convert the dream cars array to string using the toString() method.</h4>
+    <p id="dreamcars#7">Here is the result:&nbsp;</p>
+    <button type="button" onclick="display7()">Show</button>
+    <button type="button" class="button2" onclick="hide7()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#8">
+    <h4>#8. Convert the dream cars array to string using the join() method.</h4>
+    <p id="dreamcars#8">Here is the result:&nbsp;</p>
+    <button type="button" onclick="display8()">Show</button>
+    <button type="button" class="button2" onclick="hide8()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#9">
+    <h4>#9. The pop() method</h4>
+    <p id="dreamcars#9">Remove the last element of the dreamcars array and display it:&nbsp;</p>
+    <button type="button" onclick="display9()">Show</button>
+    <button onclick="hide9()" type="button" class="button2">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#10">
+    <h4>#10. The push() method</h4>
+    <p id="p#10">Adds an element at the end of the dreamcars array and display the total number of elements in the dreamcars array:&nbsp;</p>
+    <button type="button" onclick="show10()">Show</button>
+    <button type="button" class="button2" onclick="hide10()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+
+  <div id="#11">
+    <h4>#11. The shift() method</h4>
+    <p id="p11">The shift() method is just like the pop() method. The only difference is that it works on the first array's element instead of the last. Here is the result:&nbsp;</p>
+    <button onclick="show11()">Show</button>
+    <button class="button2" onclick="hide11()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#12">
+    <h4>#12. The length method</h4>
+    <p id="p12">The length method shows how many elements are in the array. In the dreamcars array, there are&nbsp;</p>
+    <button onclick="show12()">Show</button>
+    <button class="button2" onclick="hide12()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#13">
+    <h4>#13. Adding Array Elements using the arr.length method</h4>
+    <p id="p13">There are only 4 cars in the dreamcars array. Now I'm adding another car called "Tesla" at the end of the array. Full array:&nbsp;</p>
+    <p><a href="##2">Check the full dreamcars array elements here</a></p>
+    <button onclick="show13()">Show</button>
+    <button class="button2" onclick="hide13()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#14">
+    <h4>#14. Delete Array Elements using the delete method</h4>
+    <p id="p14">I'm changing the first element in dreamcars to undefined. Here is the array after using the delete method:&nbsp;</p>
+    <button onclick="show14()">Show</button>
+    <button class="button2" onclick="hide14()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#15">
+    <h4>#15. The splice() method</h4>
+    <p id="p15">It is used for adding new elements to an array. Now I'm adding 2 more cars to the dreamcars array:</p>
+    <button onclick="show15()">Show</button>
+    <button class="button2" onclick="hide15()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#16">
+    <h4>#16. The concat() method</h4>
+    <p id="p16">It is used to join multiple arrays' elements together. Now I'm joining the dreamcars array with the dreamcars2 array:</p>
+    <button onclick="show16()">Show</button>
+    <button class="button2" onclick="hide16()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#17">
+    <h4>#17. Another way to us the concat() method </h4>
+    <p id="p17">In section 16, we merge an array with an array. In this section, we'll merge an array (dreamcars) with a value (Tesla):</p>
+    <button onclick="show17()">Show</button>
+    <button class="button2" onclick="hide17()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#18">
+    <h4>#18. Sorting Numeric Array Elements</h4>
+    <p id="p18">I've created a new array called "years". It consists of a few random numbers. Here is the ascending sort:</p>
+    <button onclick="show18()">Show</button>
+    <button class="button2" onclick="hide18()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#19">
+    <h4>#19. Sorting Array Elements in Random Order</h4>
+    <p>Now I'll sort the years array in random order using the compare function:</p>
+    <p id="p19"></p>
+    <button onclick="show19()">Show</button>
+    <button class="button2" onclick="hide(x19)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#20">
+    <h4>#20. The Fisher Yates Method 1.0</h4>
+    <p>This is another method to sort array elements in random order that I got from YouTube:</p>
+    <p id="p20"></p>
+    <button onclick="show20()">Show</button>
+    <button class="button2" onclick="hide(x20)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#21">
+    <h4>#21. The Fisher Yates Method 2.0</h4>
+    <p>Another method to use the Fisher Yates Method that I got from W3Schools:</p>
+    <p id="p21"></p>
+    <button onclick="show21()">Show</button>
+    <button class="button2" onclick="hide(x21)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#22">
+    <h4>#22. For Loop</h4>
+    <p>I'm using the for loop method to multiply 2 to all elements of the array years:</p>
+    <p id="p22"></p>
+    <button onclick="show22()">Show</button>
+    <button class="button2" onclick="hide(x22)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#23">
+    <h4>#23. IF Statement</h4>
+    <p>Function show23() has 3 variables in it and also an IF statement. "If c>b (which is true), then take a*b." Here are the variables: a=20, b=35, c=45. Here is the result of a*b:</p>
+    <p id="p23"></p>
+    <button onclick="show23()">Show</button>
+    <button class="button2" onclick="hide(x23)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#24">
+    <h4>#24. For Loop - Adding Letters</h4>
+    <p>Add letter "x" infront of all elements in the array dreamcars:</p>
+    <p id="p24"></p>
+    <button onclick="show24()">Show</button>
+    <button class="button2" onclick="hide(x24)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#25">
+    <h4>#25. Maximum Value</h4>
+    <p>Find the maximum value from all elements of the years array. Result is:</p>
+    <p id="p25"></p>
+    <button onclick="show25()">Show</button>
+    <button class="button2" onclick="hide(x25)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#26">
+    <h4>#26. The Math.max() method</h4>
+    <p>Find the maximum value from all elements of the years array. Result is:</p>
+    <p id="p26"></p>
+    <button onclick="show26()">Show</button>
+    <button class="button2" onclick="hide(x26)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#27">
+    <h4>#27. For Loop, Math Max, Math Random</h4>
+    <p>Generate 20 random numbers between 1-100 and then find the largest number between those 20 numbers:</p>
+    <p id="p27"></p>
+    <button onclick="show27()">Show</button>
+    <button class="button2" onclick="hide(x27)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#28">
+    <h4>#28. Even Random Number Generator</h4>
+    <p>Generate 20 random even numbers between 1-100:</p>
+    <p id="p28"></p>
+    <p id="pp28"></p>
+    <button onclick="show28()">Show</button>
+    <button class="button2" onclick="hide28()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#29">
+    <h4>#29. Odd Random Number Generator</h4>
+    <p>Generate 20 random odd numbers between 1-100:</p>
+    <p id="p29"></p>
+    <button onclick="show29()">Show</button>
+    <button class="button2" onclick="hide(x29)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#30">
+    <h4>#30. Random Background Color Generator</h4>
+    <p>Generate random background color by clicking the button below:</p>
+    <p id="p30"></p>
+    <button onclick="show30()">Show</button>
+    <button class="button2" onclick="hide30()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#31">
+    <h4>#31. The array.map() method</h4>
+    <p>This is just like the forEach() method, but it creates a new array and assigned the value to each elements instead of changing the elements of the original array. This is a new array called "x" and another new array called "y". The elements are from the years array added with "Natsuki" at the end: </p>
+    <p id="p31"></p>
+    <p id="pp31"></p>
+    <button onclick="show31()">Show</button>
+    <button class="button2" onclick="hide31()">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#32">
+    <h4>#32. The array.filter() method</h4>
+    <p>This filters an array that passes a test. Below, I'll filter the elements of the array years that is larger than 1000:</p>
+    <p id="p32"></p>
+    <button onclick="show32()">Show</button>
+    <button class="button2" onclick="hide(x32)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#33">
+    <h4>#33. The break statement</h4>
+    <p>The break statement exits a switch statement or a loop (for...in, while, do....while).</p>
+    <p id="p33"></p>
+    <button onclick="show33()">Show</button>
+    <button class="button2" onclick="hide(x33)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#34">
+    <h4>#34. Collect Form Input Data</h4>
+    <p>This is a test to create a form and capture the value entered into a javascript variable. After entering you name in the input field, click on the button "Show" for your name to appear:</p>
+    <form method="get">
+      Your name
+      <br>
+      <input id="name">
+    </form>
+    <p id="p34"></p>
+    <button onclick="show34()">Show</button>
+    <button class="button2" onclick="hide(x34)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#35">
+    <h4>#35. The Class Method 1.0</h4>
+    <p>This javascript class creates a new object. In simple words, it is a template to make JavaScript Objects. In this example, I'll create a template of cars object. </p>
+    <form method="get">
+      Car Brand:
+      <input id="brand35">
+      <br>
+      Manufactured Year:
+      <input id="year35">
+      <br>
+      Model:
+      <input id="model35">
+      <br>
+      Price:
+      <input id="price35">
+    </form>
+    <p id="p35"></p>
+    <button onclick="show35()">Show</button>
+    <button class="button2" onclick="hide(x35)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#36">
+    <h4>#36. Similar to JS Class</h4>
+    <p>This is similar to Section #35 but I didn't use the JS Class. Class is like a function too, but I'm not sure why it's there.</p>
+    <form method="get">
+      Car Brand:
+      <input id="brand36">
+      <br>
+      Manufactured Year:
+      <input id="year36">
+      <br>
+      Model:
+      <input id="model36">
+      <br>
+      Price:
+      <input id="price36">
+    </form>
+    <p id="p36"></p>
+    <button onclick="show36()">Show</button>
+    <button class="button2" onclick="hide(x36)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#37">
+    <h4>#37. The getFullYear() Method</h4>
+    <p>This method gets the full year of today's date. So the result should be 2021:</p>
+    <p id="p37"></p>
+    <button onclick="show37()">Show</button>
+    <button class="button2" onclick="hide(x37)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#38">
+    <h4>#38. The Class Method 2.0</h4>
+    <p>This way of using the class method returns the age of how long the car has been used:</p>
+    <p id="p38"></p>
+    <button onclick="show38()">Show</button>
+    <button class="button2" onclick="hide(x38)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#39">
+    <h4>#39. The Continue Statement</h4>
+    <p>This skips a loop when a certain condition is met. So, I'll make loop to return the number 1 to 10 and skip the number 3:</p>
+    <p id="p39"></p>
+    <button onclick="show39()">Show</button>
+    <button class="button2" onclick="hide(x39)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#40">
+    <h4>#40. The do/while statement</h4>
+    <p>This is another method of doing a loop. So, I will create a new decrementing numbers array and show all of its elements. Enter the number below:</p>
+    <input id="input40">
+    <p id="p40"></p>
+    <button onclick="show40()">Show</button>
+    <button class="button2" onclick="hide(x40)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#41" class="41">
+    <h4>#41. The Calculator</h4>
+    <p>I'm attempting to create a basic calculator using all my JS knowledge I've collected so far.</p>
+    <div id="calculator" class="calculator" style="width:400px;">
+      <div id="screen" class="screen">
+        <p id="screen41" style="text-align: center; margin: 0px"></p>
+      </div>
+      <button id="seven41">7</button>
+      <button id="eight41">8</button>
+      <button id="nine41">9</button>
+      <button class="button2" id="divide41">/</button>
+      <button id="four41">4</button>
+      <button id="five41">5</button>
+      <button id="six41">6</button>
+      <button class="button2" id="multiply41">*</button>
+      <button id="one41">1</button>
+      <button id="two41">2</button>
+      <button id="three41">3</button>
+      <button class="button2" id="minus41">-</button>
+      <button id="zero41">0</button>
+      <button id="point41">.</button>
+      <button class="button2" id="equal41"  onclick="showequal41()">=</button>
+      <button class="button2" id="plus41">+</button>
+      <button class="button2" onclick="clear41()" style="width:44%">Clear</button>
+      <button class="button2" onclick="delete41()" style="width:44%">Delete</button>
+    </div>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#42">
+    <h4>#42. JavaScript Slideshow</h4>
+    <p>This is a basic slideshow using JavaScript to switch between images by changing the image's HTML Element.</p>
+    <div id="slidecontainer">
+      <img id="img42" class="img42" src="file:///Users/10spr/Downloads/Youtube/River%20Of%20Rhythms/Images/Anime%20Images/2.%20Naruto%20Images/Edited%20Images%2016-9/823293.jpg">
+      <button class="btn42a" id="btn42a" onclick="prv42x()"><</button>
+      <button class="btn42b" id="btn42b" onclick="next42x()">></button>
+      <div id="slickdots42" class="slickdots42"></div>
+    </div>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#43">
+    <h4>#43. JS setTimeout() & clearTimeout()</h4>
+    <p>The setTimeout() method is a way to delay the execution of code by milliseconds (ms). The syntax is window.setTimeout(function, milliseconds).</p>
+    <p>Whereas, the clearTimeout() is to stop the setTimeout() method. The syntax is window.clearTimeout(timervariable).</p>
+    <p>Here is an example to alert "Hello World" after 1.5 seconds. Click the "Stop" button before 1.5s passed so that there won't be any alerts.</p>
+    <button onclick="show43()">Alert</button>
+    <button class="button2" id="btnstop43">Stop</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#44">
+    <h4>#44. JS setInterval() & clearInterval()</h4>
+    <p>The setInterval() method is a way to set the amount of time interval to execute a function. The syntax is window.setInterval(function, milliseconds).</p>
+    <p>The clearInterval() method is a way to stop the setInterval() method. The syntax is window.clearInterval(timervariable).</p>
+    <p>Here is an example to console.log "Hello World - Hello World - 1.5s Passed" every 1.5 seconds. To stop it from showing at the console every 1.5s, click the "Stop" button.</p>
+    <button onclick="show44()">Show</button>
+    <button class="button2" onclick="stop44()">Stop</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#45">
+    <h4>#45. JS reduce() Method</h4>
+    <p>I'm not sure how this works but the example below uses the reduce() method to find the sum of all the elements in an array.</p>
+    <p id="p45"></p>
+    <button onclick="show45()">Show</button>
+    <button class="button2" onclick="hide(x45)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#46">
+    <h4>#46. JS reduceRight() Method</h4>
+    <p>Since this is just like the Array.reduce() method, I'm also not sure how this works but the example below uses the reduceRight() method to find the sum of all the elements in an array.</p>
+    <p id="p46"></p>
+    <button onclick="show46()">Show</button>
+    <button class="button2" onclick="hide(x46)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#47">
+    <h4>#46. JS every() Method</h4>
+    <p>The every() method checks if a value passes a test. In this example, it is basically verifying if all elements in the array years are larger than 1000. If not, it will return false. If yes, it will return true.</p>
+    <p id="p47"></p>
+    <button onclick="show47()">Show</button>
+    <button class="button2" onclick="hide(x47)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#48">
+    <h4>#48. JS some() Method</h4>
+    <p>The some() method check if some array values pass a test. This is quite similar to the Array.every() method. Below, I'll check if some of the elements in the array years are bigger than 1000 (it should return true).</p>
+    <p id="p48"></p>
+    <button onclick="show48()">Show</button>
+    <button class="button2" onclick="hide(x48)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#49">
+    <h4>#49. JS indexOf() Method</h4>
+    <p>The indexOf() method searches an array for an element value and returns its position. So I'll try searching for the index of "1975" in the array years.</p>
+    <p>Array.indexOf() returns -1 if the item is not found. If the item is present more than once, it returns the position of the first occurrence.</p>
+    <p id="p49"></p>
+    <button onclick="show49()">Show</button>
+    <button class="button2" onclick="hide(x49)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#50">
+    <h4>#50. JS lastIndexOf() Method</h4>
+    <p>Array.lastIndexOf() is the same as Array.lastIndexOf(), but returns the position of the last occurrence of the specified element.</p>
+    <p>This means, if there are two 1975 elements in the years array, it would return the index of the second one instead of the first.</p>
+    <p id="p50"></p>
+    <button onclick="show50()">Show</button>
+    <button class="button2" onclick="hide(x50)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#51">
+    <h4>#51. JS find() Method</h4>
+    <p>The find() method returns the value of the first array element that passes a test function.</p>
+    <p>JavaScript always works from left to right, this is why 2001 is the first element that is bigger than 1500.</p>
+    <p id="p51"></p>
+    <button onclick="show51()">Show</button>
+    <button class="button2" onclick="hide(x51)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#52">
+    <h4>#52. JS findIndex() Method</h4>
+    <p>The findIndex() method returns the index of the first array element that passes a test function. This is just like the find() method but instead of returning the value, it returns the index.</p>
+    <p id="p52"></p>
+    <button onclick="show52()">Show</button>
+    <button class="button2" onclick="hide(x52)">Hide</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#53">
+    <h4>#53. JS StopWatch 1.0</h4>
+    <p>A normal stopwatch using JavaScript to program.</p>
+    <p id="p53">00:00:00:00</p>
+    <button id="start53" onclick="start53()">Start</button>
+    <button class="button2" onclick="stop53()">Stop</button>
+    <button onclick="reset53(x53, xnx53)">Reset</button>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#54">
+    <h4>#54. JS Tic Tac Toe 3x3</h4>
+    <p>A tic tac toe game powered by JS.<br></p>
+    <p><br>Number of Grids: <span id="gridvaluespan54"></span> <span id="gridspan54"></span><button id="confirmgrid54" onclick="confirmgrid54()">Confirm Grid</button></p>
+    <p>Tic Tac Toe: Game of <span id="win54at"></span> <span id="winspan54"></span><button id="confirmwin54" onclick="confirmwin54()" class="button2">Confirm Win</button></p>
+    <p class="turnbutton54">The first to go is <button id='xfirst54'>X</button><button id='ofirst54'>O</button></p>
+    <p>"X" won <span id='xwintime54'></span></p>
+    <p>"O" won <span id='owintime54'></span></p>
+    <p>Clicks: <span id="clicksno54">0</span></p>
+    <button id='lastclick54' class="button2" onclick='latestclick54(latest54x)'>Latest Click</button>
+    <button id='restart54'>Clean</button>
+    <div style="overflow:scroll; max-width: 100%; max-height:500px"><div id='container54'></div></div>
+    <div class="line-break"></div>
+  </div>
+
+  <div id="#55">
+    <h4>#55. JS Confirm PopUp</h4>
+    <p>This is just like an alert but it comes with 2 buttons instead of 1. Both fo the buttons are "Cancel" and "Ok". The syntax is window.confirm("sometext").</p>
+    <button id="show55">Try It</button>
+    <div class='line-break'></div>
+  </div>
+
+  <div id="#56">
+    <h4>#56. JS Prompt PopUp</h4>
+    <p>This popup comes with a form with a text input. The syntax is window.prompt("sometext","defaultText"). Click the button below to try.</p>
+    <p id="p56"></p>
+    <button id="show56">Try It</button>
+    <div class='line-break'></div>
+  </div>
+
+  <div id="#57">
+    <h4>#57. JS Alert with Line Breaks</h4>
+    <p>The break element < br > can't be used in alerts or console.log. So the solution is to use \n. Here's an example: alert("Hello\nHow are you?");</p>
+    <p id="p57"></p>
+    <button id="show57">Try It</button>
+    <div class='line-break'></div>
+  </div>
+
+  <div id="#58">
+    <h4>#58. JS Range Slider </h4>
+    <p>Created from the < input > tag.</p>
+    <div class="slidecontainer58">
+      <input type="range" min="9" max="400" value="225" class="slider" id="myRange58">
+      <p>Value: <span id="demo58"></span></p>
+    </div>
+    <p id="p58"></p>
+    <div class='line-break'></div>
+  </div>
+
+  <div id="#59">
+    <h4>#58. JS Cookie </h4>
+    <p>I will attempt to create an alert popup that will capture my name. If the cookie works, it will greet me everytime I refresh the page.</p>
+    <div class='line-break'></div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>
